@@ -1,5 +1,18 @@
 # My Angular Starter Boilerplate
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A production-ready Enterprise Angular 21+ boilerplate utilizing an advanced toolchain, state-of-the-art testing, and strict UI paradigms.
+
+## Project Description
+
+This boilerplate provides a modern, high-performance foundation for Angular applications. It's built for developers who want a robust, pre-configured environment that includes:
+
+*   **Angular 21+** with a focus on **Zoneless** reactivity and **Signals**.
+*   **Vitest** and **Playwright** for comprehensive testing.
+*   **Tailwind CSS 4.0** for modern, utility-first styling.
+*   Automated releases and CI/CD integration.
+*   Docker support for development and production.
 
 ## Tooling Stack
 
@@ -115,6 +128,18 @@ While this boilerplate is configured for Client-Side Rendering (CSR), you can tr
 `angular.json` sets `"polyfills": []` — this is **intentional and must not be changed**. This project uses `provideZonelessChangeDetection()`, which eliminates the dependency on `zone.js` entirely. Adding `zone.js` to polyfills would re-introduce the Zone monkey-patching overhead that zoneless change detection is specifically designed to avoid, and would cause unpredictable behaviour with the Signals-based reactivity model.
 
 If you are migrating an existing Zone-based app into this boilerplate, remove `zone.js` from polyfills and replace `provideZoneChangeDetection()` with `provideZonelessChangeDetection()` in `app.config.ts`.
+
+> **Note on JSON comments in `angular.json`:** A previous version of this file contained a `"// polyfills"` key as a workaround to document the empty polyfills array inline. Angular's schema validator treats every key as a real property and rejects unknown ones, causing `ng build` and `yarn test` to fail with a schema validation error. Plain JSON does not support comments — use this README or the `CLAUDE.md` file for configuration notes instead.
+
+### Testing Environment — jsdom
+
+`vitest.config.ts` sets `environment: 'jsdom'`, which runs unit tests in a simulated browser DOM. **jsdom is not bundled with vitest 4+** — it must be installed as an explicit dev dependency:
+
+```bash
+yarn add -D jsdom
+```
+
+jsdom has no direct `import` statements anywhere in the source, so automated dependency scanners (e.g. `depcheck`) will flag it as unused. **Do not remove it.** It is a required peer dependency consumed at runtime by vitest when it bootstraps the jsdom environment for each test file. Removing it causes all unit tests to fail with `Cannot find package 'jsdom'`.
 
 ### Internationalisation (i18n)
 

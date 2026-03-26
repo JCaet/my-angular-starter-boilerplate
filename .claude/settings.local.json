@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(find D:Projectsmy-angular-starter-boilerplate -maxdepth 1 -name vitest* -o -name vite.config*)",
-      "Bash(grep -E \"\\\\.\\(rc|json|js|ts|yml|yaml\\)$\")"
-    ]
-  }
-}

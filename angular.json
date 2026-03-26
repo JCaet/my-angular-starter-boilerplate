@@ -21,7 +21,6 @@
             "outputPath": "dist/my-angular-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "// polyfills": "Intentionally empty — provideZonelessChangeDetection() replaces Zone.js. Do not add zone.js here.",
             "polyfills": [],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "css",

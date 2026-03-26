@@ -1,0 +1,15 @@
+/* Base layer: global resets and defaults applied before Tailwind utilities. */
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+/* Add @layer utilities here for custom utility classes not covered by Tailwind, e.g.:
+@layer utilities {
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+}
+*/

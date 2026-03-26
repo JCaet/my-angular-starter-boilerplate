@@ -1,14 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import './_base.css';
 
 @theme {
-  /* Application-specific theme tokens go here */
-  --color-brand-primary: #1565C0;
-  --color-brand-secondary: #0D47A1;
-}
-
-/* Add custom global layers here if needed */
-@layer base {
-  body {
-    @apply antialiased text-gray-900 bg-gray-50;
-  }
+  /* Application-specific theme tokens — extend or override Tailwind defaults here. */
+  --color-brand-primary: #1565c0;
+  --color-brand-secondary: #0d47a1;
 }
