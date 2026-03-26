@@ -1,0 +1,16 @@
+FROM node:24-alpine
+
+# Use corepack to enable consistent Yarn execution
+RUN corepack enable
+
+WORKDIR /app
+
+COPY package.json yarn.lock .yarnrc.yml ./
+RUN yarn install
+
+COPY . .
+
+EXPOSE 4200
+
+# Bind to 0.0.0.0 to enable access from the Docker host
+CMD ["yarn", "start", "--host", "0.0.0.0"]

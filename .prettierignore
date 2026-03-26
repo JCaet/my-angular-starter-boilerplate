@@ -1,0 +1,25 @@
+# Build output
+dist/
+out-tsc/
+
+# Dependencies
+node_modules/
+
+# Angular cache
+.angular/
+
+# Test coverage & reports
+coverage/
+playwright-report/
+test-results/
+
+# Storybook
+storybook-static/
+
+# Compodoc
+documentation/
+
+# Misc
+*.log
+package.json
+yarn.lock

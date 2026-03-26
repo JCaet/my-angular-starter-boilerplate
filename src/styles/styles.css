@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  /* Application-specific theme tokens go here */
+  --color-brand-primary: #1565C0;
+  --color-brand-secondary: #0D47A1;
+}
+
+/* Add custom global layers here if needed */
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-gray-50;
+  }
+}

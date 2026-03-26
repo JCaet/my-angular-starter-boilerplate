@@ -1,0 +1,80 @@
+# --- Dependencies ---
+
+node_modules/
+bower_components/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.tox/
+.nox/
+
+# --- Build & Distribution ---
+
+dist/
+build/
+out/
+target/
+*.egg-info/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.turbo/
+
+# --- Massive Data & Logs ---
+
+*.log
+logs/
+*.csv
+*.tsv
+*.jsonl
+*.sql
+*.sqlite
+*.db
+temp/
+tmp/
+
+# --- Lockfiles (Token Hogs) ---
+
+# Lockfiles are huge and Gemini/Claude don't need to read them to write code.
+
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+poetry.lock
+Pipfile.lock
+
+# --- Media & Assets ---
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.mp4
+*.wav
+*.mp3
+*.pdf
+*.zip
+*.tar.gz
+
+# --- IDE & System ---
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env*
+!.env.example
+
+# --- Documentation / Static Site Generators ---
+
+site/
+_site/
+docs/_build/
