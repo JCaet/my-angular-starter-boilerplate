@@ -14,17 +14,14 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ESNext",
-    "lib": [
-      "ES2022",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["ES2022", "dom", "dom.iterable"],
     "baseUrl": "./",
     "paths": {
       "@app/*": ["src/app/*"],
       "@core/*": ["src/app/core/*"],
       "@shared/*": ["src/app/shared/*"],
       "@features/*": ["src/app/features/*"],
+      "@layout": ["src/app/layout/index.ts"],
       "@layout/*": ["src/app/layout/*"],
       "@styles/*": ["src/styles/*"]
     }
@@ -32,7 +29,6 @@
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
-    "// strictInputAccessModifiers": "Ensures Signal-based inputs are correctly typed and protected. Do not disable.",
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
